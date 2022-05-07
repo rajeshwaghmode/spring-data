@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.7'
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+//    id "org.springdoc.openapi-gradle-plugin" version "1.6.8"
+}
+
+group 'com.java.learning.springboot.jpa'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    runtimeOnly 'com.h2database:h2'
+    implementation 'org.hibernate:hibernate-core:5.6.8.Final'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
+}
+
+test {
+    useJUnitPlatform()
+}

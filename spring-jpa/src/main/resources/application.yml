@@ -1,0 +1,35 @@
+server:
+  port: 8082
+  servlet:
+      context-path: /learn/spring-data-jpa
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:jpadb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database : H2
+    show_sql : true
+#    properties:
+#      hibernate.generate_statistics: false
+#      hibernate.cache.use_query_cache: true
+#      hibernate.cache.use_second_level_cache: true
+#      hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    root: debug
+    org:
+      springframework:
+        transaction: debug
+      hibernate:
+        SQL: debug
+#        type:
+#          descriptor:
+#            sql: trace
